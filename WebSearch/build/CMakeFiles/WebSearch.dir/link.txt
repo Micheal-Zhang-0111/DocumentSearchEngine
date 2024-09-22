@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/WebSearch.dir/src/MyRedis.cpp.o CMakeFiles/WebSearch.dir/src/WebPageLib.cpp.o CMakeFiles/WebSearch.dir/src/main.cpp.o CMakeFiles/WebSearch.dir/src/tinyxml2.cpp.o  -o ../bin/WebSearch -llog4cpp -lredis++ -lhiredis -lpthread 

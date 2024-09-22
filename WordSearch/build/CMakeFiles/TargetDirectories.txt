@@ -1,0 +1,3 @@
+/home/micheal/CppProject/SearchEngine/WordSearch/build/CMakeFiles/rebuild_cache.dir
+/home/micheal/CppProject/SearchEngine/WordSearch/build/CMakeFiles/WordRecommend.dir
+/home/micheal/CppProject/SearchEngine/WordSearch/build/CMakeFiles/edit_cache.dir

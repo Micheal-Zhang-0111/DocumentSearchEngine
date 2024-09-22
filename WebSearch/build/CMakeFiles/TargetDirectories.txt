@@ -1,0 +1,3 @@
+/home/micheal/CppProject/SearchEngine/WebSearch/build/CMakeFiles/rebuild_cache.dir
+/home/micheal/CppProject/SearchEngine/WebSearch/build/CMakeFiles/WebSearch.dir
+/home/micheal/CppProject/SearchEngine/WebSearch/build/CMakeFiles/edit_cache.dir

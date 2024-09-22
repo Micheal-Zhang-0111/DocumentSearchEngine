@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>百度</title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #dome{
+                width: 100%;
+                min-width: 1200px;
+                background: url(images/1.jpg);
+                transition: 2s;
+                /* opacity: 0.8; */
+            }
+            .Main{
+                position: relative;
+                top: 40%;
+                text-align: center;
+            }
+            .Search{
+                display:inline-block;
+            }
+            .Search>input{
+                width: 420px;
+                height: 50px;
+                float: left;
+                border-radius: 5px;
+                outline: none;
+                border: 1px solid #006CBE;
+                padding-left: 5px;
+            }
+            .Search>button{
+                width: 60px;
+                height: 50px;
+                float: left;
+                outline: none;
+                background: #006CBE;
+                border: none;
+            }
+            #ul_list{
+                list-style: none;
+                padding-top: 50px;
+                background: white;
+            }
+            #ul_list>li{
+                margin: 10px;
+                width: 100%;
+                text-align: left;
+            }
+        </style>
+
+    </head>
+
+
+    <body>
+        <div id="dome">
+            <div class="Main">
+                <div class="Search">
+                    <input type="" name="" id="Search_box" value="" />
+                    <button type="button" id="Search_ok"><img src="images/searchfont.png" width="40px"></button>
+                    <ul id="ul_list"></ul>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        var height = window.screen.height;
+        var dome = document.getElementById('dome');
+        dome.style.height = height + 'px';
+
+        var index=2;
+        setInterval(function(){
+            dome.style.background="url(images/"+index+".jpg)";
+            index = (++index>=2)?1:index;
+        },6000)
+
+        var text_box=document.getElementById('Search_box');
+        var Search_btn = document.getElementById('Search_ok');
+        function Search(){
+            if(text_box.value!=""){
+                var URL = "https://www.baidu.com/s?wd="+text_box.value;
+                alert(URL)
+                window.location.href=URL;
+            }
+            else{
+                alert("啥都没输入还想搜？");
+            }
+        }
+        Search_btn.onclick = function(){
+            Search();//鼠标单击搜索
+        }
+        document.onkeyup=function(){
+            if(text_box.value!=""){
+                if(window.event.keyCode==13){
+                    Search();//键盘抬起按下回车搜索
+                }
+            }
+        }
+
+        var ul_list = document.getElementById('ul_list');
+        var url1 = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=';
+        var url2 = '&cb='
+        text_box.onkeyup=function(){
+            if(this.value!=""){
+                var script=document.createElement('script');
+                script.src=url1+this.value+url2+'Search_Data';
+                document.body.appendChild(script);
+            }
+        }
+        function Search_Data(data){
+            var arr=data.s;
+            ul_list.innerText="";//每次插入标签之前，将之前标签清除
+            for(var a = 0; a < arr.length; a++){
+                var li = document.createElement('li');
+                li.innerHTML=arr[a];
+                ul_list.appendChild(li);
+            }
+        }
+
+        text_box.onblur=function(){
+            ul_list.style.display="none";
+        }
+        text_box.onfocus=function(){
+            ul_list.style.display="block";
+        }
+
+    </script>
+</html>

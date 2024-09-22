@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"> -->
+  
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"> -->
+  
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"></script> -->
+      
+    <script src="https://kit.fontawesome.com/f23451c27c.js" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <title>百度</title>
+    <link rel="stylesheet" href="css/baidu.css">
+</head>
+
+<body>
+<!--头部开始-->
+<div class="header" id="dome">
+    <ul class="left">
+        <li class="li_1"><a href="">新闻</a></li>
+        <li class="li_1"><a href="">hao123</a></li>
+        <li class="li_1"><a href="">地图</a></li>
+        <li class="li_1"><a href="">视频</a></li>
+        <li class="li_1"><a href="">贴吧</a></li>
+        <li class="li_1"><a href="">学术</a></li>
+        <li class="li_1" ><a href="" id="webDiskLink" onclick="webDiskLink" >网盘</a></li>
+        <li class="li_1" id="more_list">
+            <div id="more_wrap"> <a  href="">更多</a>
+                <div id="more_box">
+                    <ul>
+                        <li class="more_li">
+                            <img src="images/wangpan.png" alt=""><div class="tag_more">网盘</div>
+                        </li>
+                        <li class="more_li">
+                            <img src="images/zhidao.png" alt=""><div class="tag_more">知到</div>
+                        </li>
+                        <li class="more_li">
+                            <img src="images/baike.png" alt=""><div class="tag_more">百科</div>
+                        </li>
+                        <li class="more_li">
+                            <img src="images/tu.png" alt=""><div class="tag_more">图片</div>
+                        </li>
+                        <li class="more_li">
+                            <img src="images/baobaozhidao.png" alt=""><div class="tag_more">宝宝知道</div>
+                        </li>
+                        <li class="more_li">
+                            <img src="images/wenku.png" alt=""><div class="tag_more">文库</div>
+                        </li>
+                        <li class="more_li">
+                            <img src="images/jingyan.png" alt=""><div class="tag_more">经验</div>
+                        </li>
+                        <li class="more_li">
+                            <img src="images/yinyue.png" alt=""><div class="tag_more">音乐</div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="right" >
+        <div id="more_li">
+            <span class="r_btn1" ><a href="">设置</a></span>
+            <div id="more_menu">
+                <ul>
+                    <li><a href="">搜索设置</a></li>
+                    <li><a href="">高级搜索</a></li>
+                    <li><a href="">关闭预测</a></li>
+                    <li><a href="">隐私设置</a></li>
+                    <li><a href="">关闭热搜</a></li>
+                </ul>
+            </div>
+        </div>
+        <a class="r_btn2">登陆</a>
+    </div>
+</div>
+<!--头部结束-->
+<!--中间部分开始-->
+<div class="main">
+    <!-- <div class="search_wrap ">
+        <img id="lg" src="images/baidu_logo.png" alt="">
+    </div> -->
+
+    <!--input输入文本后弹出下拉推荐框-->
+    <!-- 核心搜索框 -->
+    <!-- 核心搜索框 -->
+    <!-- 核心搜索框 -->
+    <div class="container">
+        <i class="fa-brands fa-windows item"></i>
+        <div class="search-box">
+            <input type="text" class="search-btn" id="searchInput" placeholder="搜索">
+            <!-- 推荐关键词的div将被动态添加到这里  -->
+        </div>
+
+        <i class="fa-solid fa-magnifying-glass item"></i>
+    </div>
+    <div class="timeBox"></div>
+    <!-- <div class="Search" style="z-index: 999;">
+        <input type="" name="" id="Search_box" value="" />
+        <button type="button" id="Search_button"><img src="images/searchfont.png" width="40px"></button>
+        <ul id="ul_list"></ul>
+    </div> -->
+
+    <!-- <table  >
+            <tr class="news_type">
+                <td style="padding-left:14px;padding-top:3px;">百度热榜</td>
+                <td style="width: 300px;"><a id="hhh">换一换</a></td>
+            </tr>
+            <tr class="news_type">
+                <td ><a href=""><span style="color:#fe2d46;">1</span>&nbsp&nbsp喀什新增确诊5例 无症状19例&nbsp&nbsp<span class="_new">新</span></a></td>
+                <td><a href=""><span style="color:#9b9fac;">4</span>&nbsp&nbsp家具厂培训会员工跪地自扇耳光</a></td>
+            </tr>
+            <tr class="news_type">
+                <td><a href=""><span style="color:#ff6600">2</span>&nbsp&nbsp小兴安岭首次找到东北虎吃熊证据</a></td>
+                <td><a href=""><span style="color:#9b9fac;">5</span>&nbsp&nbsp十城房价跌幅超5%</a></td>
+            </tr>
+            <tr class="news_type">
+                <td><a href=""><span style="color:#faa90e;">3</span>&nbsp&nbsp中国空间站拒绝美国加入&nbsp&nbsp<span class="_hot">热</span></a></td>
+                <td><a href=""><span style="color:#9b9fac;">6</span>&nbsp&nbsp喀什完成全员核酸检测</a></td>
+            </tr>
+
+    </table> -->
+</div>
+
+</div>
+<!--中间部分结束-->
+
+<!--末尾部分开始-->
+<div class="footer">
+    <div class="footer_l">
+        <ul >
+            <li><a href="">设为首页</a></li>
+            <li><a href="">关于百度</a></li>
+            <li><a href=""> About Baidu</a></li>
+            <li><a href="">百度营销</a></li>
+            <li><a href="">使用百度前必读</a></li>
+            <li><a href="">意见反馈</a></li>
+            <li><a href="">帮助中心</a></li>
+        </ul>
+    </div>
+    <div class="footer_r">
+        <ul >
+            <li><a href="">MichealHENG</a></li>
+            <li><a href="">生命科学学院</a></li>
+            <li><a href="">华南师范大学</a></li>
+        </ul>
+    </div>
+    <img href="images/erweima">
+
+</div>
+
+<script src="js/baiduSearch.js"></script>
+
+<!--末尾部分结束-->
+</body>
+
+
+
+</html>
